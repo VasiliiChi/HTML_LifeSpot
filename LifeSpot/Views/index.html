@@ -3,70 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>LifeSpot</title>
-    <style>
-        /* Свойства стиля элемента. Подробнее о них в модуле по CSS */
-        .bordered {
-            border: 2px solid black;
-            background-color: azure;
-            padding: 10px;
-        }
-
-        .video-container {
-            display: inline-block;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 0;
-        }
-
-        .navbar {
-            color: darkgray;
-            padding-left: 15%;
-        }
-
-        header {
-            padding-left: 1%;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 0;
-        }
-
-        aside {
-            height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
-            width: 10%;
-            position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
-            z-index: 1; /* Сайд-бар будет поверх остальных элементов */
-            top: 0; /* Сайдбар будет в самой верхней части страницы */
-            left: 0;
-            background-color: #111; /* Черный цвет фона (задан в виде кода) */
-            overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
-            padding-top: 20px;
-        }
-
-        body {
-            padding-left: 11%;
-        }
-    </style>
+    <!--Подключение стилей по относительному пути из внешнего файла-->
+    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
 </head>
 
-<header>
-    <!--Заголовок-->
-    <h1>LifeSpot — прямые трансляции с улиц</h1>
-    <!--Параграф-->
-    <p>Покажем, что происходит прямо сейчас</p>
-</header>
-
-<aside id="sidebar">
-    <div class="navbar">
-        <p>Все трансляции</p>
-        <p>О проекте</p>
-    </div>
-</aside>
-
 <body>
+    <header>
+        <!--Заголовок-->
+        <h1>LifeSpot — прямые трансляции с улиц</h1>
+        <!--Параграф-->
+        <p>Покажем, что происходит прямо сейчас</p>
+    </header>
+
+    <aside id="sidebar">
+        <div class="navbar">
+            <p>Все трансляции</p>
+            <p>О проекте</p>
+        </div>
+    </aside>
+
     <div class="bordered">
         <!--Кнопки с подключенными ссылками-->
         <!-- <a href="https://www.youtube.com/watch?v=wCcMcaiRbhM"><button>Санкт-Петербург</button></a>
@@ -91,10 +46,12 @@
             <h3 class="video-title">Лондон, автобусный маршрут</h3>
         </div>
     </div>
+
+    <footer>
+        <p>LifeSpot - все права защищены</p>
+        <p>Связаться с нами: contact@lifespot.ru</p>
+    </footer>
 </body>
 
-<footer>
-    <p>LifeSpot - все права защищены</p>
-    <p>Связаться с нами: contact@lifespot.ru</p>
-</footer>
+
 </html>
