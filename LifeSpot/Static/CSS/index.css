@@ -1,34 +1,28 @@
-﻿/* Свойства стиля элемента. Подробнее о них в модуле по CSS */
-.bordered {
-    border: 2px solid black;
-    background-color: azure;
-    padding: 10px;
+﻿/* Комбинированный селектор - применяется ко всем элементам */
+header,footer,aside,body,.navbar,.video-container{
+    font-family: "Helvetica 65 Medium", sans-serif;
 }
 
-.video-container {
+.video-container{
     display: inline-block;
+    padding-left: 1%;
+    padding-top: 1%;
 }
-
-footer {
-    position: absolute;
-    bottom: 0;
-}
-
-.navbar {
+.navbar{
     color: darkgray;
     padding-left: 15%;
 }
-
-header {
+header{
     padding-left: 1%;
+    padding-top: 1.2%;
 }
-
 footer {
     position: absolute;
     bottom: 0;
+    font-size: medium;
+    color: dimgrey;
 }
-
-aside {
+aside{
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
     width: 10%;
     position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
@@ -37,9 +31,10 @@ aside {
     left: 0;
     background-color: #111; /* Черный цвет фона (задан в виде кода) */
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
-    padding-top: 20px;
+    padding-top: 2%;
+    font-size: large;
 }
-
-body {
+body{
     padding-left: 11%;
 }
+
