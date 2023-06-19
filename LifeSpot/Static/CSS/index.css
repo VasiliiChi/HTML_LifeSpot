@@ -3,6 +3,20 @@ header,footer,aside,body,.navbar,.video-container{
     font-family: "Helvetica 65 Medium", sans-serif;
 }
 
+header, footer, body, .video-container{
+    background-color: #fafbfc;
+}
+
+header{
+    /*color: black;*/
+    padding-left: 1%;
+    padding-top: 1.2%;
+}
+
+/*#header-index{
+    color: #ea3810;
+}*/
+
 .video-container{
     display: inline-block;
     padding-left: 1%;
@@ -24,6 +38,7 @@ footer {
     bottom: 0;
     font-size: medium;
     color: dimgrey;
+    line-height: 66%;
 }
 aside{
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
