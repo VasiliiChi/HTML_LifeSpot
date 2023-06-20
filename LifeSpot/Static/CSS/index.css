@@ -16,9 +16,14 @@ header {
 /*#header-index{
     color: #ea3810;
 }*/
+#search {
+    border-radius: 10px 10px 10px 10px;
+}
+
 #search:focus {
     outline: none;
     border: 3px solid black;
+    
 }
 
 .video-container {
