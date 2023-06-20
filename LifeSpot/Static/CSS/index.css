@@ -1,13 +1,13 @@
 ﻿/* Комбинированный селектор - применяется ко всем элементам */
-header,footer,aside,body,.navbar,.video-container{
+header, footer, aside, body, .navbar, .video-container {
     font-family: "Helvetica 65 Medium", sans-serif;
 }
 
-header, footer, body, .video-container{
+header, footer, body, .video-container {
     background-color: #fafbfc;
 }
 
-header{
+header {
     /*color: black;*/
     padding-left: 1%;
     padding-top: 1.2%;
@@ -16,26 +16,31 @@ header{
 /*#header-index{
     color: #ea3810;
 }*/
-#search:focus{
-    outline:none;
+#search:focus {
+    outline: none;
     border: 3px solid black;
 }
-.video-container{
+
+.video-container {
     display: inline-block;
     padding-left: 1%;
     padding-top: 1%;
 }
-.navbar p{
+
+.navbar p {
     color: darkgray;
     padding-left: 15%;
 }
-.navbar p:hover{
-    color: aliceblue;
-}
-header{
+
+    .navbar p:hover {
+        color: aliceblue;
+    }
+
+header {
     padding-left: 1%;
     padding-top: 1.2%;
 }
+
 footer {
     position: absolute;
     bottom: 0;
@@ -44,7 +49,8 @@ footer {
     line-height: 66%;
     padding-left: 1%;
 }
-aside{
+
+aside {
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
     width: 10%;
     position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
@@ -56,7 +62,7 @@ aside{
     padding-top: 2%;
     font-size: large;
 }
-body{
+
+body {
     padding-left: 11%;
 }
-
