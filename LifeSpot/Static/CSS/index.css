@@ -23,7 +23,7 @@ header {
 #search:focus {
     outline: none;
     border: 3px solid black;
-    
+
 }
 
 .video-container {
@@ -37,9 +37,9 @@ header {
     padding-left: 15%;
 }
 
-    .navbar p:hover {
-        color: aliceblue;
-    }
+.navbar p:hover {
+    color: aliceblue;
+}
 
 header {
     padding-left: 1%;
