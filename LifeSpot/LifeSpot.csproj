@@ -9,7 +9,6 @@
       <None Remove="Static\CSS\" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Static\" />
       <Folder Include="Static\Css\" />
     </ItemGroup>
 </Project>
