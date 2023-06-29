@@ -27,15 +27,15 @@ namespace LifeSpot
             app.UseRouting();
             // Загружаем отдельные элементы для вставки в шаблон: боковое меню и футер
             string footerHtml =
-                File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "footer.html"));
+                File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "Footer.html"));
             string sideBarHtml =
-                File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "sideBar.html"));
+                File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "SideBar.html"));
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Index.html");
 
                     // Загружаем шаблон страницы, вставляя в него элементы
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
@@ -45,9 +45,9 @@ namespace LifeSpot
                     await context.Response.WriteAsync(html.ToString());
                 });
 
-                endpoints.MapGet("/testing", async context =>
+                endpoints.MapGet("/Testing", async context =>
                 {
-                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "Testing.html");
 
                     // Загружаем шаблон страницы, вставляя в него элементы
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
@@ -57,7 +57,7 @@ namespace LifeSpot
                     await context.Response.WriteAsync(html.ToString());
                 });
 
-                endpoints.MapGet("/Static/CSS/index.css", async context =>
+                endpoints.MapGet("/Static/Css/Index.css", async context =>
                 {
                     // по аналогии со страницей Index настроим на нашем сервере путь до страницы со стилями, чтобы браузер знал, откуда их загружать
                     var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "Css", "Index.css");
