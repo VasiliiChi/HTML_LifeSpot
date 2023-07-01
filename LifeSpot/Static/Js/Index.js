@@ -7,4 +7,4 @@ if (age >= 18) {
 }
 
 let userName = prompt('Пожалуйста, введите свое имя');
-alert (`Приветствуем, ${userName}. В Вашем имени ${userName.length} символов.`)
+alert (`Приветствуем, ${userName}. В Вашем имени ${userName.length} символов.`);
