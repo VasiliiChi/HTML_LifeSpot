@@ -7,7 +7,7 @@
     <link href="../Static/Css/Index.css" rel="stylesheet" type="text/css">
     <script src="../Static/Js/Index.js" type="text/javascript"></script>
     <script>
-        let session =handleSession();
+        let session = handleSession();
         sessionLog(session);
     </script>
 </head>
@@ -19,12 +19,17 @@
     <h1>LifeSpot — прямые трансляции с улиц</h1>
     <!--Параграф-->
     <p>Покажем, что происходит прямо сейчас</p>
-    <input type="text" oninput="filterContent(document.getElementsByTagName('input')[0].value.toLowerCase()) // Сохраним текст пользовательского запроса
+    <input type="text" oninput=" // Сохраним текст пользовательского запроса
+    const inputParseFunction = function (){
+        return  document.getElementsByTagName('input')[0].value.toLowerCase();
+    } 
+        
+        filterContent(inputParseFunction)
 " id="search" placeholder=" Введите название видео" size=50%/>
 </header>
 
 <div class="bordered">
-       <!--Нью-Йорк-->
+    <!--Нью-Йорк-->
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player"
                 frameborder="0"
