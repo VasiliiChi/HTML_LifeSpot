@@ -1,4 +1,4 @@
-function handleSession(){
+function handleSession() {
     // Создадим объект для хранения сессии
     let session = new Map();
 // Сохраним userAgent
@@ -15,18 +15,19 @@ function handleSession(){
     } else {
         alert('Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены')
         window.location = 'https://www.google.com/';
-        a = true + 20 + "name";
     }
+    return session;
+}
 
-// Вывод в консоль
+let sessionLog = function logSession(session) {
+    // Вывод в консоль
     for (let result of session) {
         console.log(result);
     }
 }
 
-function filterContent() {
-    // Сохраним текст пользовательского запроса
-    let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
+function filterContent(userInput) {
+
     // Находим контейнеры с видео, которые необходимо фильтровать
     let elements = document.getElementsByClassName('video-container');
 
@@ -34,7 +35,7 @@ function filterContent() {
         // Вытаскиваем текст описания видео, которое необходимо отфильтровать
         let videoText = elements[i].querySelector('.video-title').innerText;
         // Выполняем фильтрацию, сравнивая значения в нижнем регистре
-        if (!videoText.toLowerCase().includes(inputString.toLowerCase())) {
+        if (!videoText.toLowerCase().includes(userInput.toLowerCase())) {
             // Описание
             elements[i].style.display = 'none';
         } else {
