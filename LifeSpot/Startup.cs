@@ -52,6 +52,18 @@ namespace LifeSpot
 
                     await context.Response.WriteAsync(html.ToString());
                 });
+                
+                endpoints.MapGet("/About", async context =>
+                {
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "About.html");
+
+                    // Загружаем шаблон страницы, вставляя в него элементы
+                    var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
+                        .Replace("<!--SIDEBAR-->", sideBarHtml)
+                        .Replace("<!--FOOTER-->", footerHtml);
+
+                    await context.Response.WriteAsync(html.ToString());
+                });
 
                 endpoints.MapGet("/Static/Css/Index.css", async context =>
                 {
