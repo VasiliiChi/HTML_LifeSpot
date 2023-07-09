@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <title>LifeSpot</title>
     <link href="../Static/Css/Index.css" rel="stylesheet" type="text/css">
-   </head>
+    <script src="../Static/Js/About.js" type="text/javascript"></script>
+    <script>
+        const writeReview = review => {
+            document.getElementsByClassName('reviews')[0].innerHTML += '    <div class="review-text">\n' +
+                `<p> <i> <b>${review['userName']}</b>  ${review['date']}</i></p>` +
+                `<p>${review['comment']}</p>` +
+                '</div>';
+        }
+    </script>
+</head>
 <header>
     <h1>LifeSpot - о проекте</h1>
     <p>На сайте собраны прямые трансляции из улиц разных городов мира.</p>
@@ -13,7 +22,11 @@
 </header>
 <!--SIDEBAR-->
 <body>
-
+<div class="reviews">
+    <div class="review-button">
+        <button onclick="getReview()">Оставить отзыв</button>
+    </div>
+</div>
 </body>
 <!--FOOTER-->
 </html>
