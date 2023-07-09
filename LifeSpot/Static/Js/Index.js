@@ -1,32 +1,35 @@
-function handleSession() {
-    // Создадим объект для хранения сессии
-    let session = new Map();
-// Сохраним userAgent
-    session.set("userAgent", window.navigator.userAgent);
+// Создадим объект для хранения сессии
+let session = new Map();
 
+function handleSession() {
+    // Сохраним время начала сессии
+    session.set("startDate", new Date().toLocaleString());
+    // Сохраним userAgent
+    session.set("userAgent", window.navigator.userAgent);
+}
+
+function checkAge() {
 // Запросим и сохраним возраст пользователя
     session.set("age", prompt("Пожалуйста, введите Ваш возраст"));
 
 // Проверка возраста и сохранение сессии
     if (session.get("age") >= 18) {
-        let startDate = new Date().toLocaleString()
-        alert('Приветствуем на LifeSpot ' + '\n' + "Текущее время: " + startDate);
-        session.set("startDate", startDate);
+        alert('Приветствуем на LifeSpot ' + '\n' + "Текущее время: " + new Date().toLocaleString());
+
     } else {
         alert('Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены')
-        window.location = 'https://www.google.com/';
+        window.location.href = 'https://www.google.com/';
     }
-    return session;
 }
 
-let sessionLog = function logSession(session) {
+let sessionLog = function logSession() {
     // Вывод в консоль
     for (let result of session) {
         console.log(result);
     }
 }
 
-function filterContent(inputParseFunction) {
+function filterContent() {
 
     // Находим контейнеры с видео, которые необходимо фильтровать
     let elements = document.getElementsByClassName('video-container');
@@ -35,7 +38,7 @@ function filterContent(inputParseFunction) {
         // Вытаскиваем текст описания видео, которое необходимо отфильтровать
         let videoText = elements[i].querySelector('.video-title').innerText;
         // Выполняем фильтрацию, сравнивая значения в нижнем регистре
-        if (!videoText.toLowerCase().includes(inputParseFunction.toLowerCase())) {
+        if (!videoText.toLowerCase().includes(inputParseFunction().toLowerCase())) {
             // Описание
             elements[i].style.display = 'none';
         } else {

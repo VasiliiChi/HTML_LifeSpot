@@ -7,8 +7,19 @@
     <link href="../Static/Css/Index.css" rel="stylesheet" type="text/css">
     <script src="../Static/Js/Index.js" type="text/javascript"></script>
     <script>
-        let session = handleSession();
-        sessionLog(session);
+        //Проверка на возраст
+        checkAge();
+
+        // Сохранение сессии
+        handleSession();
+
+        // Вывод данных в консоль
+        sessionLog();
+
+        // Функция получения пользовательского ввода
+        const inputParseFunction = function () {
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
     </script>
 </head>
 <!--SIDEBAR-->
@@ -19,12 +30,8 @@
     <h1>LifeSpot — прямые трансляции с улиц</h1>
     <!--Параграф-->
     <p>Покажем, что происходит прямо сейчас</p>
-    <input type="text" oninput=" // Сохраним текст пользовательского запроса
-    const inputParseFunction = function (){
-        return  document.getElementsByTagName('input')[0].value.toLowerCase();
-    } 
-        
-        filterContent(inputParseFunction)
+    <input type="text" oninput=" 
+    filterContent()
 " id="search" placeholder=" Введите название видео" size=50%/>
 </header>
 
