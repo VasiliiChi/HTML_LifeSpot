@@ -1,19 +1,23 @@
 // Создадим объект для хранения сессии
-let session = new Map();
-
-function handleSession() {
-    // Сохраним время начала сессии
-    session.set("startDate", new Date().toLocaleString());
-    // Сохраним userAgent
-    session.set("userAgent", window.navigator.userAgent);
+let session = {
+    'startDate': new Date().toLocaleString(),
+    'userAgent': window.navigator.userAgent,
+    'userAge': prompt("Пожалуйста, введите Ваш возраст")
 }
 
-function checkAge() {
-// Запросим и сохраним возраст пользователя
-    session.set("age", prompt("Пожалуйста, введите Ваш возраст"));
+//function handleSession() {
+//    // Сохраним время начала сессии
+//    session.set("startDate", new Date().toLocaleString());
+//    // Сохраним userAgent
+//    session.set("userAgent", window.navigator.userAgent);
+//}
 
-// Проверка возраста и сохранение сессии
-    if (session.get("age") >= 18) {
+function checkAge() {
+    //// Запросим и сохраним возраст пользователя
+    //    session.set("age", prompt("Пожалуйста, введите Ваш возраст"));
+
+    // Проверка возраста и сохранение сессии
+    if (session.get("userAge") >= 18) {
         alert('Приветствуем на LifeSpot ' + '\n' + "Текущее время: " + new Date().toLocaleString());
 
     } else {
@@ -22,11 +26,11 @@ function checkAge() {
     }
 }
 
-let sessionLog = function logSession() {
+let sessionLog = function () {
     // Вывод в консоль
-    for (let result of session) {
-        console.log(result);
-    }
+    console.log('Начало сессии: ' + session.startDate)
+    console.log('Данные клиента: ' + session.userAgent)
+    console.log('Возраст пользователя: : ' + session.userAge)
 }
 
 function filterContent() {
