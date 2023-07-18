@@ -11,7 +11,14 @@
 
             // Для проверки, является ли объект отзывом, используем свойство hasOwnProperty
             if (review.hasOwnProperty('rate')) {
-                likeCounter += '           <b style="color: darkgray">Рейтинг:</b>   ' + review.rate;
+                // Генерим идентификатор комментария
+                let commentId = Math.random();
+
+                /* Для кнопки лайков добавляем: идентификатор, атрибут onclick для передачи идентификатора в функцию, 
+                значок лайка, и само значение счётчика отделяем пробелом
+                Также мы добавили стиль, чтобы кнопка смотрелась лучше и не имела рамок */
+
+                likeCounter += '<button id="' + commentId + '" style="border: none" onclick="addLike(this.id)">' + `❤️ ${review.rate}</button>`
             }
 
             // Запишем результат
@@ -32,7 +39,7 @@
 <body>
 <div class="reviews">
     <div class="review-button">
-        <button onclick="getComment()">Оставить отзыв</button>
+        <button onclick="addComment()">Оставить отзыв</button>
     </div>
 </div>
 </body>
